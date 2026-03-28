@@ -15,13 +15,13 @@ export class AppController {
   }
 
   @Post('/hello')
-  postHello(@Query('name') name): string {
+  postHello(@Query('name') name: string): string {
     return this.appService.sayWelcomeToTheUser(name);
   }
 
   @Post('/helloParams/:name')
   postHelloParams(@Param() prams): string {
     console.log(prams);
-    return this.appService.sayWelcomeToTheUser("");
+    return this.appService.sayWelcomeToTheUser('');
   }
 }
